@@ -7,10 +7,34 @@
     </head>
 
     <body>
-        <p>skjsugosijvkajvyuhr;vrknqklhquhnvrkqjnhliuychlqinqluhqlihucblblihul.</p>
-        <p>skjsugosijvkajvyuhr;vrknqklhquhnvrkqjnhliuychlqinqluhqlihucblblihul.</p>
-        <p>skjsugosijvkajvyuhr;vrknqklhquhnvrkqjnhliuychlqinqluhqlihucblblihul.</p>
+        <div class="content">
+            <form action="#" method="post" class="optionsForm">
+                <label for="message">Text of notice: </label>
+                <textarea id="message"></textarea>
+
+                <input type="button" value ="Show" class="button" />
+
+                <p>Type of message: </p>
+                <div>
+                    <label for='success'>Success</label>
+                    <input type="radio" class="messageType" name="messageType" id="success" value="success" checked="checked">
+                </div>
+                <div>
+                    <label for='info'>Info</label>
+                    <input type="radio" class="messageType" name="messageType" id="info" value="info">
+                </div>
+                <div>
+                    <label for='warning'>Warning</label>
+                    <input type="radio" class="messageType"  name="messageType" id="warning" value="warning">
+                </div>
+                <div>
+                    <label for='error'>Error</label>
+                    <input type="radio" class="messageType" name="messageType" id="error" value="error">
+                </div>
+            </form>
+        </div>
         <script src="scripts/jquery-2.1.1.js"></script>
+        <script src="scripts/program.js"></script>
         <script src="scripts/notice.js"></script>
     </body>
 

@@ -1,15 +1,19 @@
-(function() {
+(function notice() {
     $.fn.notice = function(options) {
-       /* var options = $.extend({
-            background: '#20B2AA'
-        });*/
+        var options = $.extend({
+            message: 'empty message',
+            backgroundColor: '#20B2AA',
+        }, options);
         return this.each(function() {
             var lastNotice = $('.notice').last();
 
             var newNotice = $('<div/>', {
-                class: 'notice',
-                text: Math.random(),
-            }).css('top', lastNotice.offset() ? Number(lastNotice.offset().top + lastNotice.outerHeight()) : 0);
+                    class: 'notice',
+                    text: options.message
+                }).css('top', lastNotice.offset() ? Number(lastNotice.offset().top + lastNotice.outerHeight()) : 0)
+                .css('left', options.left)
+                .css('right', options.right)
+                .css('background', options.backgroundColor);
 
             newNotice.appendTo(this)
                 .animate({

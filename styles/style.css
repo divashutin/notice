@@ -2,17 +2,27 @@ body {
     margin: 0;
 }
 
+.content {
+    margin: 0;
+}
+
+.optionsForm {
+    background: silver;
+    padding: 50px;
+}
+
+input[type="radio"] {
+    /*display: block;*/
+}
+
 .notice {
-    background: #20B2AA;
+    /*background: #20B2AA;*/
     width: 200px;
     opacity: 0;
     padding: 10px;
+   /* left: 0;*/
     margin: 10px 0; 
     position: absolute;
     z-index: 9999;
 }
 
-h2 {
-    position: relative;
-    /*z-index: 0;*/
-}
