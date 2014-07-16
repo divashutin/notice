@@ -11,8 +11,20 @@ body {
     padding: 50px;
 }
 
-input[type="radio"] {
-    /*display: block;*/
+.optionsForm textarea {
+    height: 50px;
+    resize: none;
+}
+
+.optionsForm input[type="button"] {
+    display: block;
+    margin-top: 20px;
+}
+
+.section {
+    display: inline-block;
+    margin: 0 20px;
+    vertical-align: top;
 }
 
 .notice {

@@ -5,7 +5,8 @@
             backgroundColor: '#20B2AA',
         }, options);
         return this.each(function() {
-            var lastNotice = $('.notice').last();
+            var lastNotice = $('.notice').last();//[left = ' + options.left + ']
+            console.log(lastNotice.offset());
 
             var newNotice = $('<div/>', {
                     class: 'notice',

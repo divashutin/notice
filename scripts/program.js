@@ -5,11 +5,13 @@
     $form.addEventListener('click', function (e) {
         if (e.target.type == 'button') {
             var $messageType = $('.messageType:checked')[0];
+            var $position = $('.position:checked')[0];
+
             $('.content').notice({
                 message: $mess.value ? $mess.value : undefined,
                 backgroundColor: getBackgroundColor[$messageType.id],
-                left: undefined,
-                right: 0
+                left: $position.value == 'left' ? 0 : undefined,
+                right: $position.value == 'right' ? 0 : undefined
             });
         }
     }, false);
