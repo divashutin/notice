@@ -1,17 +1,18 @@
 (function notice() {
     $.fn.notice = function(options) {
-        var options = $.extend({
+        options = $.extend({
             message: 'empty message',
             backgroundColor: '#20B2AA',
+            delay: 3000,
+            left: 0
         }, options);
-        return this.each(function() {
-            var lastNotice = $('.notice').last();//[left = ' + options.left + ']
-            console.log(lastNotice.offset());
+        return this.each(function () {
+            var lastNotice = $('.notice').last();
 
             var newNotice = $('<div/>', {
-                    class: 'notice',
-                    text: options.message
-                }).css('top', lastNotice.offset() ? Number(lastNotice.offset().top + lastNotice.outerHeight()) : 0)
+                text: options.message
+            })  .attr('class', 'notice')
+                .css('top', lastNotice.offset() ? Number(lastNotice.offset().top + lastNotice.outerHeight()) : 0)
                 .css('left', options.left)
                 .css('right', options.right)
                 .css('background', options.backgroundColor);
@@ -19,15 +20,13 @@
             newNotice.appendTo(this)
                 .animate({
                     opacity: "0.9"
-                }, 500).delay(3000).animate({
+                }, 500).delay(options.delay).animate({
                     opacity: "0"
                 }, 500);
 
-           
             setTimeout(function () {
-                var offsetTop = newNotice.offset().top
+                var offsetTop = newNotice.offset().top;
                 var heightNotice = offsetTop + newNotice.outerHeight();
-                //console.log(heightNotice);
                 newNotice.remove();
 
                 $('.notice').offset(function (index, coord) {
@@ -37,7 +36,7 @@
                     return newCoord;
                 });
 
-            }, 4000);
+            }, Number(options.delay)  + 1000);
 
         });
     };
